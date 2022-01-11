@@ -1,5 +1,6 @@
 //@ts-check
 
+// add Class stocky header
 window.onscroll = function () {
   addClassSticky();
 };

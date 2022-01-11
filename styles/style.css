@@ -1,6 +1,14 @@
 :root {
   --primary-color: #c4c4c4;
+
   --text-color: #000000;
+  --text-description-modal: #131336;
+
+  --background-modal-container: #ffffff;
+  --background-modal: rgba(0, 0, 0, 0.6);
+
+  --font-open-sans: 'Open Sans', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
 }
 
 * {
@@ -11,7 +19,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-open-sans);
 }
 
 a {
@@ -22,23 +30,31 @@ li {
   list-style: none;
 }
 
+body {
+  max-height: 100vh;
+}
+
+section > p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 140%;
+}
+
+/*********** Class Header *************/
+
 .nav_container {
   padding: 1rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   position: relative;
-
   background-color: var(--primary-color);
 }
 
-.nav_icon {
+.nav_icon-menu {
   position: absolute;
 
   top: 1rem;
   left: 2.3rem;
+  cursor: pointer;
 }
 
 .main_container {
@@ -59,33 +75,42 @@ li {
   font-size: 1.2rem;
   line-height: 140%;
 
-  border: none;
-  outline: none;
   background-color: var(--primary-color);
   border-radius: 6px;
-  color: #000000;
-
-  /* text-decoration: none; */
+  color: var(--text-color);
 
   cursor: pointer;
 }
 
 .button_container {
-  padding: 2.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 2rem;
 }
 
-.paragraph {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.2rem;
-  line-height: 140%;
+/*********** Modal *************/
+
+.modal {
+  background-color: var(--background-modal);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s;
 }
 
-.modal-contenido {
-  background-color: #ffffff;
+.modal_icon-close {
+  position: absolute;
+
+  top: 2rem;
+  right: 2.2rem;
+}
+
+/* Modal description */
+
+.modal_container-description {
+  background-color: var(--background-modal-container);
   width: 275px;
   padding: 6.2rem 2.7rem 6.2rem 2.2rem;
   margin: 13% auto;
@@ -96,23 +121,14 @@ li {
   max-height: 100vh;
 }
 
-.modal_close-Icon {
-  position: absolute;
+.modal_container-description > p {
+  font-family: var(--font-roboto);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
 
-  top: 2rem;
-  right: 2.2rem;
-}
-
-.modal {
-  background-color: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 1s;
+  color: var(--text-description-modal);
 }
 
 #miModal:target {
@@ -125,37 +141,19 @@ li {
   pointer-events: auto;
 }
 
-.paragraph_dialog {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 22px;
-
-  letter-spacing: 0.015em;
-
-  color: #131336;
-}
-
 .modal_menu_container {
-  min-height: 280px;
-
-  max-width: 235px;
-
   margin: 35% auto;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 280px;
+  max-width: 235px;
 
   position: relative;
 
-  background-color: #ffffff;
+  background-color: var(--background-modal-container);
   border-radius: 6px;
 }
 
 .modal_menu_container > ul > li > a {
-  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
@@ -163,11 +161,21 @@ li {
 
   text-align: center;
 
-  color: #000000;
+  color: var(--text-color);
 }
 
+/**************** Class utilities *****************/
+
+.box_flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/***************** Media queries *****************/
+
 @media (min-width: 768px) {
-  .paragraph {
+  section > p {
     font-size: 1.6rem;
   }
 
@@ -178,7 +186,7 @@ li {
     border-radius: 16px;
   }
 
-  .modal-contenido {
+  .modal_container-description {
     width: 512px;
     max-height: 626px;
     padding: 6.82rem 4.1rem 5.18rem 3.9rem;
@@ -186,19 +194,46 @@ li {
 
     border-radius: 16px;
   }
+
+  .modal_container-description > p {
+    letter-spacing: 0.015em;
+  }
+
+  .main_container {
+    padding: 6rem 7.4rem;
+  }
+
+  .button_container {
+    padding: 6rem;
+  }
+
+  .button_modal {
+    padding: 1.1rem 6.2rem;
+    font-size: 2rem;
+  }
+
+  .modal_icon-close {
+    top: 2.4rem;
+    right: 2.68rem;
+  }
 }
 
 @media (min-width: 1439px) {
-  .nav_icon {
+  .nav_icon-menu {
     display: none;
   }
 
-  .modal-contenido {
-    width: 512px;
+  .modal_container-description {
     max-height: 429.2px;
     padding: 6.82rem 4.1rem 5.18rem 3.9rem;
     margin: 5% auto;
+  }
 
-    border-radius: 16px;
+  .main_container {
+    padding: 6rem 15.4rem;
+  }
+
+  .button_container {
+    padding: 8rem;
   }
 }
