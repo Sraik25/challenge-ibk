@@ -24,99 +24,20 @@
       </nav>
     </header>
     <main class="main_container">
-      <section>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam luctus
-          mattis justo, eget lacinia arcu viverra eget. Vivamus accumsan
-          tincidunt sapien nec venenatis. Vivamus sit amet nisi scelerisque,
-          malesuada purus sit amet, condimentum felis. Aenean ornare libero non
-          vehicula luctus. Aliquam erat volutpat. In ultricies dapibus nisi.
-          Aenean sagittis turpis eget magna imperdiet blandit. Quisque eget
-          massa est. Donec sit amet pulvinar libero.
-        </p>
-        <br />
-        <p>
-          Etiam fringilla neque vel dui tempor pretium. Donec venenatis
-          fermentum dictum. Cras dictum ac massa sit amet vehicula. Proin tortor
-          erat, aliquet ut nunc nec, pulvinar sodales felis. Ut commodo est a
-          metus tincidunt, posuere ultricies neque iaculis. Morbi lacinia
-          hendrerit urna at viverra. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Ut blandit nisi
-          ut sapien lobortis consectetur a ac eros.
-        </p>
-      </section>
+      <section id="section-top"></section>
 
       <section class="button_container box_flex">
-        <a href="#miModal" class="button_modal">OPEN MODAL</a>
+        <a href="#miModal" class="button_open-modal">OPEN MODAL</a>
       </section>
 
-      <section>
-        <p>
-          Pellentesque orci lectus, rutrum eu malesuada ut, sodales pellentesque
-          magna. In et pretium mi. Curabitur eu congue dui. Nulla facilisi. Duis
-          ut ipsum dictum, rutrum lectus quis, scelerisque purus. Pellentesque
-          et orci sed mi convallis egestas eu et lorem. Donec et sagittis eros.
-        </p>
-        <br />
-        <p>
-          Suspendisse at sapien libero. Praesent ultricies mauris sed felis
-          interdum, eget semper risus euismod. Proin vehicula scelerisque enim,
-          non semper mi malesuada eu. Sed at orci et mauris feugiat venenatis.
-          In vehicula odio a orci tristique, eget eleifend ligula accumsan.
-          Curabitur ut nisl magna. Aliquam erat volutpat. Sed et orci
-          condimentum, blandit odio sit amet, ultrices orci.
-        </p>
-        <br />
-        <p>
-          In lacinia luctus pharetra. Sed tempor eu lectus eu tempor. In odio
-          nunc, tincidunt et ante maximus, sagittis lacinia metus. Curabitur
-          quis pulvinar nisl. Aliquam viverra id nisi non vulputate. Sed sit
-          amet dignissim ante, vitae pulvinar dolor. Vestibulum facilisis
-          consequat quam, eu congue eros ultrices eget. Donec egestas, lacus nec
-          ornare molestie, urna augue faucibus sem, quis cursus tellus nulla in
-          est. Nullam scelerisque nec nisi sit amet euismod.
-        </p>
-      </section>
+      <section id="section-bottom"></section>
 
       <div id="miModal" class="modal">
-        <div class="modal_container-description">
-          <a class="modal_icon-close" href="#"
-            ><img src="/assets/close-icon.svg" alt="close-icon"
-          /></a>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            luctus mattis justo, eget lacinia arcu viverra eget. Vivamus
-            accumsan tincidunt sapien nec venenatis. Vivamus sit amet nisi
-            scelerisque, malesuada purus sit amet, condimentum felis. Aenean
-            ornare libero non vehicula luctus. Aliquam erat volutpat. In
-            ultricies dapibus nisi. Aenean sagittis turpis eget magna imperdiet
-            blandit. Quisque eget massa est. Donec sit amet pulvinar libero.
-          </p>
-          <br />
-          <p>
-            Etiam fringilla neque vel dui tempor pretium. Donec venenatis
-            fermentum dictum. Cras dictum ac massa sit amet vehicula. Proin
-            tortor erat, aliquet ut nunc nec, pulvinar sodales felis. Ut commodo
-            est a metus tincidunt, posuere ultricies neque iaculis. Morbi
-            lacinia hendrerit urna at viverra. Class aptent taciti sociosqu ad
-            litora torquent per conubia nostra, per inceptos himenaeos. Ut
-            blandit nisi ut sapien lobortis consectetur a ac eros.
-          </p>
-          <br />
-          <p>
-            Etiam fringilla neque vel dui tempor pretium. Donec venenatis
-            fermentum dictum. Cras dictum ac massa sit amet vehicula. Proin
-            tortor erat, aliquet ut nunc nec, pulvinar sodales felis. Ut commodo
-            est a metus tincidunt, posuere ultricies neque iaculis. Morbi
-            lacinia hendrerit urna at viverra. Class aptent taciti sociosqu ad
-            litora torquent per conubia nostra, per inceptos himenaeos. Ut
-            blandit nisi ut sapien lobortis consectetur a ac eros.
-          </p>
-        </div>
+        <div id="modal_description" class="modal_container-description"></div>
       </div>
 
       <div id="myMenu" class="modal">
-        <div class="modal_menu_container box_flex">
+        <div class="modal_container-menu box_flex">
           <a class="modal_icon-close" href="#"
             ><img src="/assets/close-icon.svg" alt="close-icon"
           /></a>
@@ -131,6 +52,8 @@
         </div>
       </div>
     </main>
-    <script src="./js/main.js"></script>
+    <script type="module" src="/js/db.js"></script>
+    <script type="module" src="/js/formaters.js"></script>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>
